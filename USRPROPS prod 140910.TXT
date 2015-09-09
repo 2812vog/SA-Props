@@ -76,6 +76,7 @@ LIST "Database Type"
 	VALUE "Oracle"
 	VALUE "Open Source"
 	VALUE "mySQL"
+	VALUE "other SQL"
 }
 
 
@@ -86,6 +87,7 @@ LIST "Primary Purpose"
 	VALUE "Citrix"
 	VALUE "Management"
 	VALUE "System"
+	VALUE "Virtual Appliance"
 }
 
 
