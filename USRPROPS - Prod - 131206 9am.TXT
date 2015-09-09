@@ -1,0 +1,762 @@
+REM "07-11-13"
+REM "Licensed Materials - Property of IBM"
+REM "USRPROPS.TXT"
+REM "(c) Copyright IBM Corporation 1986,2009.  All Rights Reserved."
+REM "U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp."
+REM "You may copy, modify, and distribute these samples, or their modifications, in any form,"
+REM "internally or as part of your application or related documentation. These samples have not been"
+REM "tested under all conditions and are provided to you by IBM without obligation of support of any kind."
+REM "IBM PROVIDES THESE SAMPLES  'AS IS', SUBJECT TO ANY STATUTORY WARRANTIES THAT CANNOT BE EXCLUDED."
+REM "IBM MAKES NO WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO,"
+REM "THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT"
+REM "REGARDING THESE SAMPLES OR TECHNICAL SUPPORT, IF ANY."
+
+REM "Instructions for modifying this file are in the on-line help."
+
+REM "********************************************************************************************"
+REM "*						                                                *"
+REM "*  Author 		:	Paul Banim							*"
+REM "*	Company		:	Corso					                        *"
+REM "*  Created		:	August 2013							*"
+REM "*  Description 	:									*"
+REM "*  This file contains the customisations to System Architect for the  purposes of Stanwell *"
+REM "*  Refer to the System Architect documentation for usrprops documentation.			*"
+REM "*  											*"
+REM "********************************************************************************************"
+REM "* 				           Change History					*"
+REM "*__________________________________________________________________________________________*"
+REM "*ID  :Inits: Date	  : Description of changes						*"
+REM "*==========:=========:=====================================================================*"
+REM "*001 : PB	:20/08/13 : Added Capability Map diagram, Business Domain definition. Started   *"
+REM "* 	  :     :  	  : Diagram, Symbol, and Definition numbering from higher numbers in 	*"
+REM "* 	  :     :  	  : case legacy usrprops needs to be merged at a later date		*"
+REM "*____:_____:_________:_____________________________________________________________________*"
+REM "*002 : PB	:19/09/13 : Updated Database.Dedicated Application property from OneOf to ListOf*"
+
+REM "* 	  :     :	  : Changed the Name of Server.Hosts Databases property to Databases.	*"
+REM "*____:_____:_________:_____________________________________________________________________*"
+REM "*003 : VG	:23/09/13 : Upddate Server definition to include continuity type combo list	*"
+REM "*    :     :         : make unwanted application component objects invisible               *"
+REM "*____:_____:_________:_____________________________________________________________________*"
+REM "*004 : VG	:24/09/13 : update server definition to exclude introduction.stereotype, and    *"
+REM "* 	  :     :	  : add stanwell.host to map host to virtual servers.                   *"
+REM "* 	  :     :	  :									*"
+REM "* 	  :     :	  : 									*"
+REM "*____:_____:_________:_____________________________________________________________________*"
+REM "*005 : PB 	:27/09/13 : Added Application level to Application Component			*"
+REM "* 	  :     :	  : Added Application Interface Diagram					*"
+REM "* 	  :     :	  :									*"
+REM "*____:_____:_________:_____________________________________________________________________*"
+REM "*006 :  VG	:1-10-13         : 	make properties invisible					*"
+REM "* 	  :     :	  : 									*"
+REM "* 	  :     :	  :									*"
+REM "* 	  :     :	  : 									*"
+REM "* 	  :     :	  : 									*"
+REM "* 	  :     :	  :									*"
+REM "********************************************************************************************"
+
+REM "********************************************************************************************"
+REM "___________________________________________New Lists________________________________________"
+REM "********************************************************************************************"
+
+LIST "ICT Category"
+{
+	VALUE "1 - Core Systems"
+	VALUE "2 - App Shared Layer"
+	VALUE "3 - Business"
+	VALUE "4 - Benchtop Equipment"
+	VALUE "5 - Control Systems"
+	VALUE "6 - Outlying"
+}
+
+LIST "Database Type"
+{
+	VALUE "SQL"
+	VALUE "Oracle"
+	VALUE "App Server"
+	VALUE "Citrix"
+}
+
+
+LIST "Server Model"
+{
+	VALUE "PowerEdge R815"
+	VALUE "ProLiant DL385 G5p"
+	VALUE "ProLiant DL385 G6"
+	VALUE "IBM eServer xSeries 336"
+	VALUE "IBM System x3550"
+	VALUE "IBM System x3650"
+	VALUE "IBM System x3550 M2"
+	VALUE "IBM System x3650 M2"
+	VALUE "IBM BladeCenter HS22"
+	VALUE "Cisco MCS 7800"
+	VALUE "IBM eServer BladeCenter HS21"
+	VALUE "Lenovo D20"
+	VALUE "RISKPC - Lenovo D10"
+	VALUE "MATHLAB1 - HP Compaq"
+	VALUE "MATHLAB2"
+	VALUE "Dell PowerEdge R815"
+	VALUE "AIX LPAR"
+	VALUE "IBM eServer xSeries 345"
+	VALUE "IBM System x"
+	VALUE "IBM TotalStorage Ultrium Tape Library"
+	VALUE "IBM p5 IO Expansion Drawer"
+	VALUE "IBM p5 55A"
+	VALUE "AIX"
+	VALUE "DELL 515"
+	VALUE "DELL 415"
+	VALUE "IBM x3650 m3"
+	VALUE "IBM x3550 M3"
+	VALUE "ProLiant BL495c G5" 
+	VALUE "ProLiant DL385 G6" 
+	VALUE "ProLiant BL495c G5"
+	VALUE "ProLiant BL465c G7"
+}
+
+LIST "Processor Type"
+{
+	VALUE "AMD Operon 6166 HE"
+	VALUE "Quad-Core AMD 2384"
+	VALUE "6-core AMD Opteron 2431"
+	VALUE "AMD Operon 6276"
+}
+
+
+LIST "Server Type"
+{
+	VALUE "Virtual"
+	VALUE "Physical"
+}
+
+LIST "Operating System"
+{
+	VALUE "Windows"
+	VALUE "Unix"
+	VALUE "Linux"
+}
+
+
+LIST "Lifecycle Status"
+{
+	VALUE "Active"
+	VALUE "Powered Off"
+	VALUE "Leave as is"
+	VALUE "Decommission"
+	VALUE "Upgrade"
+	VALUE "Maintain"
+
+}
+
+LIST "Business Criticality"
+{
+	VALUE "Critical"
+	VALUE "High"
+	VALUE "Medium"
+	VALUE "Low"
+}
+
+
+LIST "Continuity Type"
+{
+	VALUE "SRM"
+	VALUE "Netscaler Load Balance"
+	VALUE "System\App HA"
+	VALUE "Mirror"
+	VALUE "None"
+}
+
+
+
+LIST "Application Level"
+
+{
+	
+VALUE "Suite"
+
+	VALUE "Module" 
+	VALUE "Application"
+
+	VALUE "Interface"
+
+}
+
+LIST "Storage"
+
+{
+	
+VALUE "SAN"
+
+	
+VALUE "VNX SAN"
+
+	VALUE "CX4 SAN"
+
+	VALUE "DS4700 SAN" 
+	VALUE "Local Disk"
+
+}
+
+LIST "Application Level"
+{
+	VALUE	"Suite"  	
+	VALUE	"Module"	depictions   {diagram images\Light_Orange_Visio.wmf menu images\exp_application_component_Orange.bmp }
+	VALUE	"Application"  	depictions   {diagram images\Light_Blue_Visio.wmf menu images\exp_application_component_blue.bmp }
+	VALUE	"Interface"	depictions   {diagram images\Std_Blue_Interface.wmf menu images\exp_application_Interface_Blue.bmp }	
+}
+
+LIST "Audit Status"
+{
+	VALUE "Active"
+	VALUE "Decommissioned"
+	VALUE "Unknown"
+}
+
+LIST "Citrix"
+{	
+	VALUE "In Citrix"
+	VALUE "Not in Citrix"
+	VALUE "Disabled in Citrix"
+}
+
+RENAME DIAGRAM "User 5" TO "Business Capability Model"
+RENAME DIAGRAM "User 6" TO "Application Interface"
+
+
+ASSIGN "User 5" TO "Business Capability Model"
+ASSIGN "User 6" TO "Business Capability Model"
+ASSIGN "User 7" TO "Business Capability Model"
+
+ASSIGN "User 8" TO "Application Interface"
+
+ASSIGN "User 9" TO "Application Interface"
+
+ASSIGN "User 10" TO "Application Interface"
+RENAME SYMBOL "User 5" TO "Capability"
+RENAME SYMBOL "User 6" TO "Business Domain"
+RENAME SYMBOL "User 7" TO "Function"
+
+RENAME SYMBOL "User 8" TO "Application Component"
+
+RENAME SYMBOL "User 9" TO "Database"
+
+RENAME SYMBOL "User 10" TO "Data Flow" 
+
+
+RENAME DEFINITION "User 15" TO "Business Domain" 
+RENAME DEFINITION "User 16" TO "Cluster" 
+RENAME DEFINITION "User 17" TO "DB Instance"
+RENAME DEFINITION "User 18" TO "Host"
+
+
+
+SYMBOL "Business Domain" IN "Business Capability Model"
+{
+	DEPICT LIKE "Entity" IN "Entity Relation"
+	DEFINED BY "Business Domain"
+}
+
+
+SYMBOL "Capability" IN "Business Capability Model"
+{
+	DEPICT LIKE "Entity" IN "Entity Relation"
+	DEFINED BY "Capability"
+}
+
+SYMBOL "Function" IN "Business Capability Model"
+{
+	DEPICT LIKE "Entity" IN "Entity Relation"
+	DEFINED BY "Function"
+}
+
+
+SYMBOL "Application Component" IN "Application Interface" 
+
+{
+	
+	REPRESENTS NODE "Application Component"
+	
+	DEPICT LIKE "Application Component" IN "Application Communication"
+
+	PROPERTY "Application Level"  {  INVISIBLE EDIT Text ListOnly List "Application Level"  DEFAULT "" LENGTH  15 }
+}
+
+
+
+SYMBOL "Database" IN "Application Interface" 
+
+{
+	
+	DEFINED BY "Database"
+	
+	depictions {diagram images\data.wmf borders { 1, 2, 1, 2 }	menu images\data.bmp}
+
+
+
+
+
+}
+
+
+
+SYMBOL "Data Flow" IN "Application Interface"
+
+{
+	
+	DEFINED BY "Data Flow"
+	
+	DEPICT LIKE "Data Flow" IN "Data Flow Gane & Sarson"
+
+}
+
+
+
+Definition "Business Domain"
+{
+CHAPTER "Stanwell"
+	PROPERTY "Contains Capabilities" { EDIT LISTOF "Capability" MIRRORS "Containing Business Domain" RELATE BY "contains" }
+}
+
+
+Definition "Capability"
+{
+	CHAPTER "Stanwell"
+	PROPERTY "Containing Business Domain" 
+		{ EDIT ONEOF "Business Domain" MIRRORS "Contains Capabilities" RELATE BY "contained in" }
+	PROPERTY "Contains Functions" 
+		{ EDIT LISTOF "Function" MIRRORS "Containing Capability" RELATE BY "contains" }
+	PROPERTY "Delivered by Applications" 
+		{EDIT listof "Application Component" MIRRORS "Capability Assessment" LENGTH 5000 }
+	PROPERTY "Delivered by Databases" 
+		{EDIT listof "Database" MIRRORS "CAF Category" LENGTH 5000 }
+}
+
+
+Definition "Function"
+{
+CHAPTER "Stanwell"
+	PROPERTY "Containing Capability" 
+		{ EDIT ONEOF "Capability" MIRRORS "Contains Functions" RELATE BY "contained in" }
+}
+
+
+
+Definition "Application Component"
+{
+
+
+CHAPTER "Introduction"
+	PROPERTY "Application Level"
+		{LISTONLY LIST "Application Level" INIT_FROM_SYMBOL DEFAULT " " LENGTH 20 }
+
+
+CHAPTER "Audit"
+	GROUP "Info"
+{
+	LAYOUT    {  COLS 2 ALIGN OVER }
+	PROPERTY "Audit Status"
+		{ LISTONLY LIST "Audit Status" LENGTH 30  }
+	PROPERTY "Decommision Date"
+		{ EDIT Date LENGTH 10 }
+}
+	GROUP "Other"
+{
+	LAYOUT    {  COLS 2 ALIGN OVER }
+	PROPERTY "Citrix"
+		{ LISTONLY LIST "Citrix" LENGTH 30  }
+	PROPERTY "Business Criticality"	
+		{ LISTONLY LIST "Business Criticality" LENGTH 30 }
+}
+
+
+CHAPTER "Identification"
+	PROPERTY "Capability Assessment"
+		{EDIT listof "Capability" MIRRORS "Delivered by Applications" LENGTH 5000 }
+
+
+GROUP "Costs"
+	{
+	PROPERTY "Renewal Date" 
+		{ EDIT Date LENGTH 10 }
+	}
+
+
+
+CHAPTER "Implementation"
+	PROPERTY "Vendor"			{  INVISIBLE  }
+CHAPTER "Migration"
+	PROPERTY "Migrations from this"			{  INVISIBLE  }
+	PROPERTY "Migrations to this"			{  INVISIBLE  }
+CHAPTER "Decomposition"
+	PROPERTY "Comprises"			{  INVISIBLE  }
+	PROPERTY "Is Part Of"			{  INVISIBLE  }
+CHAPTER "Business"
+	PROPERTY "Supports Function"			{  INVISIBLE  }
+	PROPERTY "Supports Processes"			{  INVISIBLE  }
+CHAPTER "Technology"
+	PROPERTY "Realized By General Component"		{  INVISIBLE  }
+	PROPERTY "Hosted at Location"			{  INVISIBLE  }
+	PROPERTY "Is Supported By"			{  INVISIBLE  }
+CHAPTER "Interactions"
+	PROPERTY "Interacts with"				{  INVISIBLE  }
+CHAPTER "Application Interface"
+	PROPERTY "Interfaces"				{  INVISIBLE  }
+	PROPERTY "Application Interface"			{  INVISIBLE  }
+CHAPTER "Governance"
+	PROPERTY "Guided by Principles"			{  INVISIBLE  }
+	PROPERTY "Constrained by Constraints"		{  INVISIBLE  }
+	PROPERTY "Based on Assumptions"			{  INVISIBLE  }
+	PROPERTY "Applicable Standards"			{  INVISIBLE  }
+CHAPTER "Worked Planned"
+	PROPERTY "Gaps to satisfy"				{  INVISIBLE  }
+	PROPERTY "Work Packages Planned"			{  INVISIBLE  }
+CHAPTER "Is Implemented By"
+	PROPERTY "Is Implemented By"			{  INVISIBLE  }
+CHAPTER "Deployed As"
+	PROPERTY "Deployed As"				{  INVISIBLE  }
+CHAPTER "Standardization"
+	PROPERTY "Standards Class"		{  INVISIBLE  }
+	PROPERTY "Standard Creation Date"		{  INVISIBLE  }
+	PROPERTY "Last Standard Review Date"	{  INVISIBLE  }
+	PROPERTY "Next Standard Review Date"	{  INVISIBLE  }
+CHAPTER "III-RM"
+	PROPERTY "In Category"			{  INVISIBLE  }
+	PROPERTY "Sub Category"			{  INVISIBLE  }
+CHAPTER "Identification"
+	PROPERTY "Category"			{  INVISIBLE  }
+	PROPERTY "Source"			{  INVISIBLE  }
+	PROPERTY "Owner"			{  INVISIBLE  }
+CHAPTER "Users"
+	PROPERTY "Used by Role"			{  INVISIBLE  }
+CHAPTER "Business"
+	PROPERTY "Related EBPs"			{  INVISIBLE  }
+CHAPTER "Technology"
+	PROPERTY "Is Supported By Logical TC"	{  INVISIBLE  }
+CHAPTER "Information"	
+	PROPERTY "Encapsulates Logical Data Components"	{  INVISIBLE  }
+	PROPERTY "Encapsulates Physical Data Components"	{  INVISIBLE  }
+	PROPERTY "Accesses Entities"			{  INVISIBLE  }
+    PROPERTY "Encapsulates Logical Data Components" {INVISIBLE}
+    PROPERTY "Is used by Entities" { INVISIBLE }
+    PROPERTY "Relates from Migrations" { INVISIBLE }
+    PROPERTY "Relates to Migrations" { INVISIBLE }
+    PROPERTY "Gaps to satisy" { INVISIBLE }
+    PROPERTY "Work Packages Planned" { INVISIBLE }
+    PROPERTY "PhysPartOf" { INVISIBLE }
+    PROPERTY "PhysComprises" { INVISIBLE }
+    PROPERTY "LogPartOf" { INVISIBLE }
+    PROPERTY "LogComprises" { INVISIBLE }
+
+
+CHAPTER "Stanwell"
+	PROPERTY "ICT Category"	
+		{EDIT TEXT LISTONLYCOMBO LIST "ICT Category" LENGTH 40}
+	PROPERTY "ICT SME" 
+		{EDIT LISTOF "Person" MIRRORS "ICT SME For" LENGTH 2000 HELP "Enter the name of the ICT SME"}
+	PROPERTY "Business Representative" 
+		{EDIT LISTOF "Person" MIRRORS "Business Representative For" LENGTH 5000 HELP "Enter the name of the Business Representative"}
+	PROPERTY "Vendor" 
+		{EDIT ONEOF "Vendor" MIRRORS "Vendor Of" LENGTH 2000 HELP "Enter the name of the Vendor"}
+	PROPERTY "Manufacturer" 
+		{EDIT ONEOF "Vendor" MIRRORS "Manufacturer Of" LENGTH 2000 HELP "Enter the name of the Manufacturer"}
+	PROPERTY "Dedicated Application of Database" 
+		{EDIT LISTOF "Database" MIRRORS "Dedicated Application" LENGTH 5000 }	
+	PROPERTY "Installed On" 
+		{EDIT LISTOF "Server" MIRRORS "Apps Installed" LENGTH 5000 }
+	
+
+
+}
+
+
+
+Definition "Person"
+{
+CHAPTER "Stanwell"
+	PROPERTY "ICT SME For" 
+		{EDIT LISTOF "Application Component" MIRRORS "ICT SME" LENGTH 5000}
+	PROPERTY "Business Representative For" 
+		{EDIT LISTOF "Application Component" MIRRORS "Business Representative" LENGTH 5000}
+}
+
+Definition "Vendor"
+{
+CHAPTER "Stanwell"
+	PROPERTY "Vendor Of" 
+		{EDIT LISTOF "Application Component" MIRRORS "Vendor" LENGTH 5000}
+	PROPERTY "Manufacturer Of" 
+		{EDIT LISTOF "Application Component" MIRRORS "Manufacturer" LENGTH 5000}
+	PROPERTY "Contract Vendor Of"
+		{EDIT LISTOF "Host" MIRRORS "Vendor (for support contracts)" LENGTH 5000}
+
+}
+
+
+Definition "Database"
+{
+CHAPTER "Stanwell"
+	PROPERTY "ID"
+		{ EDIT Text LENGTH 80  }
+	PROPERTY "Installed Server" 
+		{EDIT ListOF "Server" MIRRORS "Databases" LENGTH 2000 }
+	PROPERTY "Server Location" 
+		{EDIT ONEOF "Location" MIRRORS "Databases" LENGTH 2000 }
+	PROPERTY "Instance" 
+		{EDIT ONEOF "DB Instance" MIRRORS "Databases" LENGTH 2000 }
+	PROPERTY "Cluster Name" 
+		{EDIT ONEOF "Cluster" MIRRORS "Databases" LENGTH 2000 }
+	PROPERTY "Dedicated Application" 
+		{EDIT LISTOF "Application Component" MIRRORS "Dedicated Application of Database" LENGTH 2000 }
+	PROPERTY "Application Notes"
+		{ EDIT Text LENGTH 200  }
+	PROPERTY "Production?"	
+		{ EDIT BOOLEAN LENGTH 1 DEFAULT 'F' DISPLAY { FORMAT STRING } }	
+	PROPERTY "Database Type"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Database Type" LENGTH 40}
+	PROPERTY "CAF Category"
+		{EDIT ONEOF "Capability" MIRRORS "Delivered by Databases" LENGTH 2000}
+}
+
+
+Definition "Server"
+{
+CHAPTER "Introduction"
+	PROPERTY "Stereotype"				{  INVISIBLE  }
+	PROPERTY "Maximum Supported RAM"		{  INVISIBLE  }
+	PROPERTY "Maximum Installed RAM"		{  INVISIBLE  }
+	PROPERTY "Processor Type"			{  INVISIBLE  }
+	PROPERTY "Brand"				{  INVISIBLE  }
+	PROPERTY "In Service Date"  			{  INVISIBLE  }
+
+
+
+Chapter "Stanwell"
+
+	GROUP "Server"
+{
+	LAYOUT   {   COLS 3 ALIGN OVER   }
+	PROPERTY "ID"
+		{ EDIT Text LENGTH 10  }
+	PROPERTY "Server Type"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Server Type" LENGTH 40}
+	PROPERTY "Primary Purpose"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Database Type" LENGTH 40}
+}
+	GROUP "OS Info"
+{
+	LAYOUT    {  COLS 2 ALIGN OVER }
+	PROPERTY "OS"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Operating System" LENGTH 40}
+	PROPERTY "O/S Version"
+		{ EDIT Text LENGTH 35  }
+}
+
+	GROUP "Other"
+{
+	LAYOUT {  COLS 3 ALIGN OVER  }
+	PROPERTY "Server Lifecycle Status"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Lifecycle Status" LENGTH 40}
+	PROPERTY "Production?"	
+		{ EDIT BOOLEAN LENGTH 1 DEFAULT 'F' DISPLAY { FORMAT STRING } }	
+}
+	LAYOUT {  COLS 3 ALIGN OVER  }
+	PROPERTY "Purchase Date"
+		{  EDIT Date  }
+	PROPERTY "Maintenance End Date"
+		{  EDIT Date  }
+	PROPERTY "Annual Maintenance Cost"
+		{  EDIT Text Length 35   }
+
+	PROPERTY "Location" 
+		{EDIT ONEOF "Location" MIRRORS "Servers" LENGTH 2000 }
+	GROUP "CPU"
+{
+	LAYOUT   {  COLS 3 ALIGN OVER }
+	PROPERTY "CPU Cores"
+		{ EDIT Text LENGTH 50 }
+	PROPERTY "CPU MHz"
+		{ EDIT Text LENGTH 15 }
+	PROPERTY "Processor Type"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Processor Type" LENGTH 40}
+}
+	PROPERTY "Storage Type"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Storage" LENGTH 40}
+	PROPERTY "Disk"
+		{ EDIT Text LENGTH 20  }
+
+
+CHAPTER "Common"
+	PROPERTY "Apps Installed" 
+		{EDIT LISTOF "Application Component" MIRRORS "Installed On" DISPLAY {FORMAT List} LENGTH 5000}
+	PROPERTY "Databases" 
+		{EDIT LISTOF "Database" MIRRORS "Installed Server" LENGTH 5000}	
+	PROPERTY "Instance" 
+		{EDIT ONEOF "DB Instance" MIRRORS "Servers" LENGTH 2000 }
+
+
+
+CHAPTER "Virtual"
+	PROPERTY "Cluster / Host Name" 
+		{EDIT LISTOF "Host" MIRRORS "Servers" LENGTH 1200 }
+	GROUP " "
+{
+	LAYOUT  {  COLS 2 ALIGN OVER  }
+	PROPERTY "SRM?"	
+		{ EDIT BOOLEAN LENGTH 1 DEFAULT 'F' DISPLAY { FORMAT STRING } }
+	PROPERTY "Continuity Type"
+		{EDIT TEXT LISTONLYCOMBO LIST "Continuity Type" LENGTH 40}
+}
+	GROUP "Provision"
+{
+	LAYOUT  {  COLS 2 ALIGN OVER  }
+	PROPERTY "Provisioned Disk"
+		{ EDIT Text LENGTH 15 }
+	PROPERTY "Used Disk"
+		{ EDIT Text LENGTH 15 }
+
+}
+
+CHAPTER "Physical"
+	PROPERTY "Model"	
+		{EDIT TEXT LENGTH 40}
+	PROPERTY "Serial"
+		{ EDIT Text LENGTH 20  }
+}
+
+Definition "Location"
+{
+CHAPTER "Identification"
+	PROPERTY "ID"			{ INVISIBLE }
+	PROPERTY "Category"		{ INVISIBLE }
+	PROPERTY "Source"		{ INVISIBLE }
+	PROPERTY "Owner"		{ INVISIBLE }
+
+CHAPTER "Organisation"
+	PROPERTY "Actors operating in Location"		{ INVISIBLE }
+
+CHAPTER "Information"
+	PROPERTY "Hosts Data Components"			{ INVISIBLE }	
+
+CHAPTER "Applications"
+	PROPERTY "Hosts Physical Application Components"	{ INVISIBLE }
+
+CHAPTER "Technology"
+	PROPERTY "Hosts Physical Technology Components"	{ INVISIBLE }
+
+CHAPTER "Matrix"
+	PROPERTY "Related EBP"				{ INVISIBLE }
+
+CHAPTER "Governance"
+	PROPERTY "Guided by Principles"			{ INVISIBLE }
+	PROPERTY "Constrained by Constraints"		{ INVISIBLE }
+	PROPERTY "Based on Assumptions"			{ INVISIBLE }
+	PROPERTY "Applicable Standards"			{ INVISIBLE }
+
+CHAPTER "Worked Planned"
+	PROPERTY "Gaps to Satisfy"				{ INVISIBLE }
+	PROPERTY "Work Packages Planned"			{ INVISIBLE }
+
+CHAPTER "Comprised Of"
+	PROPERTY "Comprised Of"				{ INVISIBLE }
+
+
+Chapter "Stanwell"
+	PROPERTY "Databases" 
+		{EDIT LISTOF "Database" MIRRORS "Server Location" LENGTH 5000}
+	PROPERTY "Servers" 
+		{EDIT LISTOF "Server" MIRRORS "Location" LENGTH 5000 }
+}
+
+Definition "Cluster"
+{
+Chapter "Stanwell"
+	PROPERTY "Databases" 
+		{EDIT LISTOF "Database" MIRRORS "Cluster Name" LENGTH 5000}
+
+}
+
+
+Definition "DB Instance"
+{
+Chapter "Stanwell"
+	PROPERTY "Databases" 
+		{EDIT LISTOF "Database" MIRRORS "Instance" LENGTH 5000}
+	PROPERTY "Servers" 
+		{EDIT LISTOF "Server" MIRRORS "Instance" LENGTH 5000 }
+}
+
+
+Definition "Host"
+{
+
+	PROPERTY "ID"
+		{  EDIT TEXT LENGTH 10  }
+
+	PROPERTY "Server Type"	
+		{EDIT TEXT LISTONLY LIST "Server Type" LENGTH 40}
+
+	PROPERTY "Location" 
+		{EDIT ONEOF "Location" MIRRORS "Servers" LENGTH 2000 }
+
+
+Chapter "Stanwell"
+	PROPERTY "Servers"  
+		{EDIT LISTOF "Server" MIRRORS "Cluster / Host Name" LENGTH 5000 }
+
+
+GROUP "System Information"
+{
+	PROPERTY "Model"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Server Model" LENGTH 40}
+	PROPERTY "CPU Cores"
+		{ EDIT Text LENGTH 50 }
+	PROPERTY "Processor Type"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Processor Type" LENGTH 40}
+	PROPERTY "Primary Purpose"
+		{  EDIT TEXT LENGTH 60  }
+}
+	
+GROUP "Maintenance Life Cycle" 
+{
+	PROPERTY "Purchase Date"
+		{  EDIT Date  }
+	PROPERTY "Maintenance End Date"
+		{  EDIT Date  }
+	PROPERTY "Annual Maintenance"
+		{ EDIT TEXT LENGTH 20  }
+	PROPERTY "Serial"
+		{ EDIT TEXT LENGTH 20  }
+	PROPERTY "Vendor (for support contracts)"
+		{EDIT ONEOF "Vendor" MIRRORS "Contract Vendor Of" LENGTH 2000 }
+
+}
+	GROUP "Other"
+{
+	LAYOUT {  COLS 3 ALIGN OVER  }
+	PROPERTY "Server Lifecycle Status"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Lifecycle Status" LENGTH 40}
+	PROPERTY "Production?"	
+		{ EDIT BOOLEAN LENGTH 1 DEFAULT 'F' DISPLAY { FORMAT STRING } }	
+}
+	PROPERTY "Server Lifecycle Status"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Lifecycle Status" LENGTH 40}
+	PROPERTY "Continuity Type"
+		{EDIT TEXT LISTONLYCOMBO LIST "Continuity Type" LENGTH 40}
+
+	GROUP "OS Info"
+{
+	LAYOUT    {  COLS 2 ALIGN OVER }
+	PROPERTY "OS"	
+		{EDIT TEXT LISTONLYCOMBO LIST "Operating System" LENGTH 40}
+	PROPERTY "O/S Version"
+		{ EDIT Text LENGTH 35  }
+}
+}
+
+
+DEFINITION "Data Flow"
+{
+	CHAPTER "Source & Target"
+	PROPERTY "From"  { EDIT HETEROGENEOUSONEOF "Application Component", Database Relate By "has parent of" FROMDEF  }
+	PROPERTY "To"    { EDIT HETEROGENEOUSONEOF "Application Component", Database Relate By "has child of" TODEF  }
+}
+
